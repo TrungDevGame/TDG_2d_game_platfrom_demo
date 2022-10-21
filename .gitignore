@@ -1,0 +1,11 @@
+bootCamProject/.vsconfig
+bootCamProject/Library
+bootCamProject/Logs
+bootCamProject/obj
+bootCamProject/Temp
+bootCamProject/UserSettings
+bootCamProject/.Assembly-CSharp
+Assembly-CSharp/bootCamProject
+bootCamProject/Assembly-CSharp.csproj
+bootCamProject/bootCamProject.sln
+bootCamProject/.vs/bootCamProject/v16/.suo
