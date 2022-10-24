@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerDemo : MonoBehaviour
 {
     public Text txtMoney;
-    public int money = 0;
+    public int money = 0;  
     private float speed = 4;
     bool isRight = true;
     public Animator animator;
@@ -14,6 +14,9 @@ public class PlayerDemo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       int savevalue= PlayerPrefs.GetInt("Money", 0);
+        txtMoney.text = savevalue.ToString();
+        Debug.Log(savevalue);
         animator = GetComponent<Animator>();
     }
 
@@ -69,6 +72,7 @@ public class PlayerDemo : MonoBehaviour
             money = money + 100;
             Destroy(collision.gameObject);
             txtMoney.text = "Money :" + money.ToString();
+            PlayerPrefs.SetInt("Money", money);
         }
 
      
