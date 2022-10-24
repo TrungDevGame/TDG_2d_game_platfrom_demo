@@ -1,9 +1,12 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerDemo : MonoBehaviour
 {
+    public Text txtMoney;
+    public float money = 0;
     private float speed =4;
     bool isRight = true;
     public Animator animator;
@@ -42,6 +45,19 @@ public class PlayerDemo : MonoBehaviour
     {
         isRight = !isRight;
         transform.localScale = new Vector3(transform.localScale.x * -1, 1, 1);
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        //kiêm tra lượm coin
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            money = money + 100;
+            Destroy(collision.gameObject);
+            txtMoney.text = "Money :" + money.ToString();
+        }
+
+     
     }
 
 }
